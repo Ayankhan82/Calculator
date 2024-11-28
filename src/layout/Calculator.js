@@ -1,20 +1,34 @@
 import React, { useState } from "react";
+<<<<<<< HEAD
 import Display from "./Display";
 import Button from "./Button";
+=======
+import Display from "./display";
+import Button from "./button";
+>>>>>>> newfeatures
 import "./Calculator.css";
 
 const Calculator = () => {
   const [input, setInput] = useState("");
+<<<<<<< HEAD
 
   const handleClick = (value) => {
     if (value === "=") {
       try {
         setInput(eval(input)); // Evaluate the expression
+=======
+  
+  const handleClick = (value) => {
+    if (value === "=") {
+      try {
+        setInput(eval(input)); // Use eval carefully in real-world apps
+>>>>>>> newfeatures
       } catch {
         setInput("Error");
       }
     } else if (value === "C") {
       setInput("");
+<<<<<<< HEAD
     } else if (value === "%") {
       if (input) {
         try {
@@ -39,6 +53,8 @@ const Calculator = () => {
           setInput("Error");
         }
       }
+=======
+>>>>>>> newfeatures
     } else {
       setInput(input + value);
     }
@@ -48,6 +64,7 @@ const Calculator = () => {
     <div className="calculator">
       <Display value={input} />
       <div className="buttons">
+<<<<<<< HEAD
         {[
           "7", "8", "9", "/", 
           "4", "5", "6", "*", 
@@ -55,6 +72,9 @@ const Calculator = () => {
           "0", ".", "=", "+", 
           "%", "x²", "x³"
         ].map((btn) => (
+=======
+        {["7", "8", "9", "/", "4", "5", "6", "*", "1", "2", "3", "-", "0", ".", "=", "+"].map((btn) => (
+>>>>>>> newfeatures
           <Button key={btn} value={btn} onClick={handleClick} />
         ))}
         <Button value="C" onClick={handleClick} />
